@@ -13,8 +13,6 @@ export class RecipeEditComponent implements OnInit {
   isEditing = false;
   recipeForm: FormGroup;
 
-  
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -84,6 +82,10 @@ export class RecipeEditComponent implements OnInit {
     }
 
     this.onCancel();
+  }
+
+  onDeleteIngredient(index: number): void {
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
   }
 
   onCancel(): void {
