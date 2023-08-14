@@ -31,7 +31,7 @@ import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edi
     RecipeEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [ShoppingListService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
