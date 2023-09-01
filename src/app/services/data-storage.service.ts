@@ -28,8 +28,8 @@ export class DataStorageService {
       take(1),
       exhaustMap((user) => {
         return this.http.get<Recipe[]>(
-          'https://recipe-web-app-3629c-default-rtdb.firebaseio.com/recipes.json?auth=' +
-            user.token
+          'https://recipe-web-app-3629c-default-rtdb.firebaseio.com/recipes.json',
+          { params: new HttpParams().set('auth', user.token) }
         );
       }),
       map((recipes) => {
